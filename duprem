@@ -1,0 +1,26 @@
+/** @OnlyCurrentDoc */
+/**
+ * Removes duplicate rows from the current sheet.
+ */
+function removeDuplicates() {
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var data = sheet.getDataRange().getValues();
+  var newData = [];
+  for (var i in data) {
+    var row = data[i];
+    var duplicate = false;
+    for (var j in newData) {
+      if (row[1] == newData[j][1]) {
+        duplicate = true;
+      }
+    }
+    if (!duplicate) {
+      newData.push(row);
+    }
+  }
+  sheet.clearContents();
+  sheet.getRange(1, 1, newData.length, newData[0].length).setValues(newData);
+  var maxRows = sheet.getMaxRows(); 
+  var lastRow = sheet.getLastRow();
+  sheet.deleteRows(lastRow+1, maxRows-lastRow);
+}
