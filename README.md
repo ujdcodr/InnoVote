@@ -1,15 +1,16 @@
 # InnoVote
 Voting backend using Google Forms and Google Sheets API
 The following technologies make up InnoVotes procedural pipeline:
-Google Forms - Single point of data collection from voters
-Google Sheets - Consolidated view of voter responses
-Google Apps Script - Implementation of form CAPTCHA and duplicate vote removal
-Google Developer Console - Service account creation to enable API calls
-Google Sheets API - Enable backend voter verification and vote tally
+* Google Forms - Single point of data collection from voters
+* Google Sheets - Consolidated view of voter responses
+* Google Apps Script - Implementation of form CAPTCHA and duplicate vote removal
+* Google Developer Console - Service account creation to enable API calls
+* Google Sheets API - Enable backend voter verification and vote tally
+
 InnoVote’s  backend is programmed in Python and makes use of the following packages:
-gspread - Google Sheet data collection
-sqlite3 - SQL database creation
-oauth2client.service_account - Security
+* gspread - Google Sheet data collection
+* sqlite3 - SQL database creation
+* oauth2client.service_account - Security
 
 
 Set up
